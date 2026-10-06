@@ -1,0 +1,1 @@
+{ "name": "walk", "type": "module", "scripts": { "test": "node --test" } }
