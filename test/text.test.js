@@ -9,3 +9,9 @@ test('truncate keeps n characters, then an ellipsis', () => {
 test('truncate leaves a short string alone', () => {
   assert.equal(truncate('ab', 3), 'ab');
 });
+test('truncate to zero keeps only the ellipsis', () => {
+  assert.equal(truncate('abcdef', 0), '…');
+});
+test('truncate to a negative length keeps only the ellipsis', () => {
+  assert.equal(truncate('abcdef', -1), '…');
+});
