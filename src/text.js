@@ -3,5 +3,5 @@ export function slugify(s) {
 }
 
 export function truncate(s, n) {
-  return s.slice(0, n - 1) + '…';
+  return s.length <= n ? s : s.slice(0, Math.max(n, 0)) + '…';
 }

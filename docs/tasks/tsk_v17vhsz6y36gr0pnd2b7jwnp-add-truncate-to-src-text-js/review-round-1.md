@@ -88,3 +88,10 @@ Pick one before merge: (a) switch to the ternary in finding #1 and keep the
 seeded tests, or (b) keep the product formula and rewrite both seeded tests.
 Reviewer recommends (a): one line, green suite, matches function name, fixes
 #2 for free.
+
+## Engineer rebuttal (repair round 1)
+
+Finding #2 says it is "covered by the fix in #1". That is only partly true.
+The ternary fixes `n = 0`, but negative `n` still slices from the end:
+`truncate('abcdef', -1) → 'abcde…'`. I added `Math.max(n, 0)` and a test.
+Every `n <= 0` now returns `'…'`.
